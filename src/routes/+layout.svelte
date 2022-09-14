@@ -6,6 +6,7 @@
 
   import { AppShell } from '@brainandbones/skeleton';
   import { AppBar } from '@brainandbones/skeleton';
+  import { Badge } from '@brainandbones/skeleton';
 
 </script>
 
@@ -28,4 +29,8 @@
 	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
 	<!-- Be sure to insert your route <slot> in the default position --->
 	<slot />
+
+  <svelte:fragment slot="pageFooter">
+    Brought to you by <a href="https://stubber.com"><Badge background="bg-primary-500">Stubber.com</Badge></a>
+  </svelte:fragment>
 </AppShell>
