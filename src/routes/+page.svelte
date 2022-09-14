@@ -12,7 +12,7 @@ storeHighlightJs.set(hljs);
 
 
 
-<Card background="bg-primary-500" color="text-white">
+<Card class="m-4" background="bg-surface-500" color="text-white">
 
   <h3 class="text-2xl font-bold text-center">Basic Usage</h3>
 
@@ -32,9 +32,9 @@ evtSource.onmessage = function(event) {
   </ul>
 </Card>
 
-<hr class="py-2">
+<hr class="p-2">
 
-<Card background="bg-primary-500" color="text-white">
+<Card class="mx-4" background="bg-surface-500" color="text-white">
 
   <h3 class="text-2xl font-bold text-center">Advanced Usage</h3>
 
