@@ -89,7 +89,7 @@ function get_data(custom_dataobj){
   var now = Date.now()
   if(custom_dataobj){
     var testdata = custom_dataobj;
-    testdata.now = now;
+    //testdata.now = now;
   }
   else{
     var testdata = {'testing':true,'sse_dev':'is great','msg':'It works!','now':now};
