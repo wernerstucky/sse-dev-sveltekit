@@ -105,6 +105,21 @@
         >
       </p>
     </Card>
+
+
+    <hr class="p-2" />
+
+    <Card class="mx-4" background="bg-surface-500" color="text-white">
+      <h3 class="text-2xl font-bold text-center">GraphQL Demo</h3>
+      <p>
+        This returns a basic GraphQL EventSource.<br />
+        <Button
+          variant="ghost-primary"
+          href={`/test?jsonobj={"data":{"test":3}}`}
+          >GraphQL Format</Button
+        >
+      </p>
+    </Card>
   </div>
 </div>
 
