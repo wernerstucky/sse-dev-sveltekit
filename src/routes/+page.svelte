@@ -28,9 +28,9 @@ evtSource.onmessage = function(event) {
     </li>
     <li>You will now be able to manipulate the DOM with the incoming data</li>
     <li>You will receive a message by default every 2 seconds from the server</li>
-    <li><a href="/testpage.html">View Source on this HTML Demo Page to help you understand</a></li>
-    <li><a href="/test">Test Event Source here</a></li>
   </ul>
+  <Button variant="ghost-primary"  href="/test">Test Event Source here</Button>
+  <Button  variant="ghost-primary" href="/testpage.html">View Source on this HTML Demo Page to help you understand</Button>
 </Card>
 
 <hr class="p-2">
@@ -44,7 +44,7 @@ evtSource.onmessage = function(event) {
     To set the interval pass a "interval" query parameter on the url. eg. for 5 seconds do the following
     <CodeBlock language="javascript" code={`const evtSource = new EventSource("https://sse.dev/test?interval=5");`}></CodeBlock>
 
-    <a href="/test?interval=5">Test Event Source here</a>
+    <Button variant="ghost-primary"  href="/test?interval=5">Test Event Source here</Button>
   </p>
 
   <br>
@@ -53,7 +53,7 @@ evtSource.onmessage = function(event) {
   <p>
     To set the JSON data returned for each interval, pass a "jsonobj" query parameter on the url. eg.
     <CodeBlock language="javascript" code={`const evtSource = new EventSource("https://sse.dev/test?jsonobj={"name":"werner","age":38}");`}></CodeBlock>
-    <a href={`/test?jsonobj={"name":"werner","age":38}`}>Test Event Source here</a>
+    <Button variant="ghost-primary"  href={`/test?jsonobj={"name":"werner","age":38}`}>Test Event Source here</Button>
   </p>
 </Card>
 
