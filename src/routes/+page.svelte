@@ -29,10 +29,10 @@ storeHighlightJs.set(hljs);
   </p>
 
   <CodeBlock language="javascript" code={`const evtSource = new EventSource("https://sse.dev/test");
-  evtSource.onmessage = function(event) {
-    var dataobj = JSON.parse(event.data);
-    console.log(dataobj);
-  }`}></CodeBlock>
+evtSource.onmessage = function(event) {
+  var dataobj = JSON.parse(event.data);
+  console.log(dataobj);
+}`}></CodeBlock>
 
 <!--
   <h3>Basic Usage</h3>
