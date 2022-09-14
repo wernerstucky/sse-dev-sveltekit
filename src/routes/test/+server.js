@@ -10,7 +10,7 @@ var event_interval_seconds = 2;
 
 /** @type {import('./$types').RequestHandler} */
 export function GET({ url, request }) {
-  const clientId = Date.now();
+  const clientId = crypto.randomUUID();
 
   const newClient = {
     id: clientId,
