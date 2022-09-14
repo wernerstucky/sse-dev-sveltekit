@@ -1,0 +1,40 @@
+<head>
+
+  <script>
+
+    const evtSource = new EventSource("/test");
+
+    function start_sse_test(){
+
+      evtSource.onmessage = function(event) {
+        console.log(event);
+        const newElement = document.createElement("li");
+
+
+        var dataobj = JSON.parse(event.data);
+        console.log(dataobj);
+
+        newElement.textContent = "message: " + event.data;
+        eventList.appendChild(newElement);
+      }
+
+    }
+  </script>
+
+</head>
+
+<h1>Demo SSE HTML File</h1>
+View source for details<br>
+
+<button onClick="start_sse_test();return false;">Start SSE Test</button>
+<button onClick="eventList.innerHTML = '';return false;">Clear</button>
+
+<ul id="list">
+</ul>
+
+
+<script>
+
+const eventList = document.getElementById("list");
+</script>
+

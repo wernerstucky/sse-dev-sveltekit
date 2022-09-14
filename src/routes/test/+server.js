@@ -10,14 +10,12 @@ var event_interval_seconds = 2;
 
 /** @type {import('./$types').RequestHandler} */
 export function GET({ url, request }) {
-
-  console.log(request);
-
   const clientId = Date.now();
 
   const newClient = {
     id: clientId,
-    interval: (url.searchParams.get('interval') || event_interval_seconds) * 1000
+    interval: (url.searchParams.get('interval') || event_interval_seconds) * 1000,
+    timer: null
   };
 
   if(url.searchParams.get('jsonobj')){
@@ -33,11 +31,13 @@ export function GET({ url, request }) {
       newClient.controller = controller;
       //start client
       startClient(newClient);
-
-      request.on('close', () => {
-        console.log(`${clientId} Connection closed`);
-        clearInterval(newClient.timer);
-        clients.update(arr=>{ arr.filter(client => client.id !== clientId); return arr; });
+    },
+    cancel() {
+      //console.log('Got a cancel request',newClient.timer);
+      clearInterval(newClient.timer);
+      clients.update(arr=>{
+        arr = arr.filter(c => c.id !== newClient.id);
+        return arr;
       });
     }
   })
@@ -49,7 +49,6 @@ export function GET({ url, request }) {
     }
   };
   let res = new Response(stream,opts);
-
   return res;
 }
 
